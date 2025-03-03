@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tier 2.</title>
+    <style>
+        /* Fixes the HTML Document */
+        html{
+            width: 100%;
+            height: 100vh;
+        }
+        /* Targets all elements to remove their margins */
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        /* The body of the document */
+        body{
+            color: rgb(255, 221, 50);
+            background: linear-gradient(to left bottom, rgb(207, 207, 53), rgb(255, 255, 136));
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        /* The box containing the title and some info */
+        .t2intro{
+            width: auto;
+            text-align: center;
+            background-color: rgb(168, 168, 28);
+            padding: 10px;
+            margin-top: 15px;
+            margin-left: 15px;
+            margin-right: 15px;
+            border-radius: 15px;
+        }
+        /* The title */
+        .t2intro h2{
+            padding-top: 30px;
+        }
+        /* The Back link */
+        .back{
+            color: rgb(255, 221, 50);
+        }
+        /* The Box that holds the lower portion of the page */
+        .holdbox{
+            height: 73vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+        }
+        /* The button that must be clicked */
+        .t2button{
+            width: 140px;
+            height: 80px;
+            background-color: rgb(255, 221, 50);;
+            color: rgb(183, 173, 0);
+            border: 3px solid rgb(181, 151, 0);
+            border-radius: 50px;
+            font-size: 1.5em;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+        /* The container for the button */
+        #buttonHolder{
+            width: auto;
+        }
+        /* The Game Over popup */
+        .gameover{
+            text-align: center;
+            color: red;
+        }
+        /* The Try Again Button */
+        .tryagain{
+            margin-top: 5px;
+            width: 100px;
+            height: 60px;
+            background-color: rgb(198, 142, 79);
+            color: maroon;
+            border: 3px solid rgb(144, 93, 0);
+            border-radius: 50px;
+            font-size: 1.08em;
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <!-- Container -->
+    <div id="container" class="container">
+        <!-- Title Box -->
+        <div class="t2intro">
+            <h1>Tier 2</h1>
+            <p>Parameters: 3s - 15s Intervals, 1.5s to click</p>
+            <!-- Score Counter -->
+            <h2>Score: <span id="counter">0</span></h2>
+            <!-- Return Link -->
+            <a class="back" href="index.html">Back to Home</a>
+        </div>
+        <!-- Lower Box -->
+        <div class="holdbox">
+            <!-- Button Holder -->
+            <div id="buttonHolder">
+                
+            </div>
+        </div>
+    </div>
+    <script src="script2.js"></script>
+</body>
+</html>

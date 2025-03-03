@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reaction Timing Game</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Container for the page */
+        .container{
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        /* Container for the introductions */
+        .intro{
+            margin-left: 15%;
+            margin-right: 15%;
+            text-align: center;
+            padding: 20px;
+            height: auto;
+            background-color: #f6bbf7;
+            color: rgb(193, 72, 193);
+            border-radius: 15px;
+        }
+        /* Targets the title of the introduction */
+        .intro h1{
+            padding-bottom: 4%;
+        }
+        /* Targets the paragraphs of the instructions */
+        .intro p{
+            padding-bottom: 4%;
+        }
+        /*Difficulties*/
+        /* A box that contains the difficulty button box. */
+        .diffbox{
+            margin-left: 15%;
+            margin-right: 15%;
+            text-align: center;
+            padding: 20px;
+            height: auto;
+            background-color: #f6bbf7;
+            color: rgb(193, 72, 193);
+            border-radius: 15px;
+        }
+        /* A box that contains the difficulty buttons */
+        .difficulties{
+            background-color: #f6bbf7;
+            width: auto;
+            height: 20vh;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            grid-gap: 15px;
+            padding: 10px;
+            border-radius: 15px;
+        }
+        /* The Tier 1 difficulty button */
+        .tier1{
+            color: lightgreen;
+            background: linear-gradient(to left bottom, rgb(56, 188, 56), lightgreen);
+            align-content: center;
+            text-decoration: none;
+            border-radius: 15px;
+            border: 3px solid rgb(79, 198, 79);
+            transform: scale(1);
+            
+        }
+        /* Makes said button larger when hovered over */
+        .tier1:hover{
+            transform: scale(1.03);
+        }
+        /* The Tier 2 difficulty button */
+        .tier2{
+            color: rgb(160, 203, 81);
+            background: linear-gradient(to left bottom, rgb(207, 207, 53), rgb(255, 255, 136));
+            align-content: center;
+            text-decoration: none;
+            border-radius: 15px;
+            border: 3px solid rgb(160, 203, 81);
+            transform: scale(1);
+        }
+        /* Makes said button larger when hovered over */
+        .tier2:hover{
+            transform: scale(1.03);
+        }
+        /* The Tier 3 difficulty button */
+        .tier3{
+            color: rgb(255, 129, 110);
+            background: linear-gradient(to left bottom, rgb(212, 40, 14), rgb(255, 112, 90));
+            align-content: center;
+            text-decoration: none;
+            border-radius: 15px;
+            border: 3px solid rgb(255, 112, 90);
+            transform: scale(1);
+        }
+        /* Makes said button larger when hovered over */
+        .tier3:hover{
+            transform: scale(1.03);
+        }
+        /* The Tier 4 difficulty button */
+        .tier4{
+            color: rgb(68, 5, 81);
+            background: linear-gradient(to left bottom, rgb(174, 0, 187), rgb(242, 67, 255));
+            align-content: center;
+            text-decoration: none;
+            border-radius: 15px;
+            border: 3px solid rgb(68, 5, 81);
+            transform: scale(1);
+        }
+        /* Makes said button larger when hovered over */
+        .tier4:hover{
+            transform: scale(1.03);
+        }
+        /*Hidden Tier*/
+        /* The styles for a hidden difficulty tier... */
+        .tier5{
+            text-decoration: none;
+            color: rgb(193, 72, 193);
+            cursor: text;
+        }
+    </style>
+</head>
+<body>
+    <!-- The Container -->
+    <div class="container">
+        <!-- The introductions -->
+        <div class="intro">
+            <h1>Reaction Timing Game!</h1>
+            <h3>Instructions:</h3>
+            <p>
+                Select a Tier below to begin. When you begin, you will be faced with an empty background, and a counter on the top of the screen.
+            </p>
+            <p>
+                During <b>random</b> intervals, a <b>button</b> will appear in the middle of your screen. Your job is to <b>click the button whenever it appears!</b>
+            </p>
+            <p>
+                <b>Your counter will go back to zero if you don't click the button in time</b>. Try to see how long you can go!
+            </p>
+            <p>
+                <b>*The higher the Tier, the less consistent the button will appear, and the narrower the time frame to click it! <a class="tier5" href="tier5.html">It might be harder than you think!</a></b>
+            </p>
+            <p>
+                <!-- Difficulty Descriptions -->
+                Tier 1: 5s - 10s Intervals, 2s to click
+                <br>
+                Tier 2: 3s - 15s Intervals, 1.5s to click
+                <br>
+                Tier 3: 2s - 20s Intervals, 1s to click
+                <br>
+                Tier 4: 1s - 30s Intervals, 0.5s to click
+            </p>
+        </div>
+        <!-- Box containing the difficulty box -->
+        <div class="diffbox">
+            <!-- Box containing the difficulties -->
+            <div class="difficulties">
+                <!-- Tier 1 -->
+                <a class="tier1"href="tier1.html">🙂Tier 1🙂</a>  
+                <!-- Tier 2 -->
+                <a class="tier2"href="tier2.html">😐Tier 2😐</a>
+                <!-- Tier 3  -->
+                <a class="tier3"href="tier3.html">🙁Tier 3🙁</a>  
+                <!-- Tier 4 -->
+                <a class="tier4"href="tier4.html">😠Tier 4😠</a>
+            </div>
+        </div>  
+    </div>
+</body>
+</html>
