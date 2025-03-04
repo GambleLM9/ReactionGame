@@ -35,7 +35,7 @@ The instructions are listed in-game, but for a more detailed version:
 ## Example of Randomization Logic
 ```
 function timerStart(){ 
-    let interval = Math.floor(Math.random() * (11 - 5)) + 5 /
+    let interval = Math.floor(Math.random() * (11 - 5)) + 5
     console.log(interval.toFixed() + " Seconds") 
     let timervalue = interval * 1000 
     console.log(timervalue) 
