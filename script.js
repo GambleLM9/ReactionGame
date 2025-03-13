@@ -2,6 +2,8 @@ let theButton = document.getElementById("buttonHolder") //DOM for the Button Hol
 let timer = '' //Variable for the timer
 let scoreboard = document.getElementById('counter') //DOM for the scoreboard 
 let counter = 0 //Variable for the score counter
+let cheeseCounter = 0 //Variable for the anti-cheat
+let cheeseTimer = ''//Variable for the anti-cheat timer
 function beginGame(){ //Begins the game on activation
     console.log("Game started") //LOGGING: Logs the message in the console, signaling that the game has began
     timerStart() //Activates the timerStart function
@@ -16,7 +18,7 @@ function timerStart(){ //Starts the timer on activation
 function displayButton(){ //Displays the button on activation
     //Sets the DOM for the Button holder equivalent to the following code, generating the button.
     theButton.innerHTML += `
-    <button class="t1button" onclick="buttonClick()">Click Me!</button>
+    <button class="t1button" onclick="ignoreTrap(), buttonClick()">Click Me!</button>
     `
     timer = setTimeout(gameLost, 2000) //Sets an activation timer for 2000 miliseconds, equating to 2 seconds. After 2 seconds have passed, activate gameLost function
 }
@@ -27,7 +29,7 @@ function gameLost(){ //Displays the game over message on activation
     theButton.innerHTML += `
         <div class="gameover">
             <h2>Oops! Game Over!</h2>
-            <button class="tryagain" onclick="tryAgain()">Try Again?</button>
+            <button class="tryagain" onclick="ignoreTrap(), tryAgain()">Try Again?</button>
         </div>
     `
 }
@@ -45,5 +47,29 @@ function tryAgain(){ //Resets the game and restarts it upon activation
     console.log(counter, "Counter") //LOGGING: Logs the value of the counter to confirm a reset
     scoreboard.innerHTML = counter //Sets the DOM for the scoreboard equal to the value of the counter, which should be 0
     timerStart() //Activates the timerStart() function to begin the game again
+}
+function mouseTrap(){ //This is the game's anti-cheat system
+    cheeseCounter++ //Adds 1 to the anti-cheat counter
+    console.log('Cheesy', cheeseCounter) //LOGGING: Logs the current value of the anti-cheat counter
+    if(cheeseCounter > 5){ //Checks if the anti-cheat counter exceeds 5
+        console.log('Trap Activated!') //LOGGING: Logs the activation of the anti-cheat
+        clearTimeout(timer) //Clears the current timer
+        theButton.innerHTML='' //Clears the DOM for the Button holder, making the button disappear.
+        //Sets the DOM for the Button holder equivalent to the following code, generating a pop up to call the player out for cheating
+        theButton.innerHTML=`
+        <div class="mouseTrap">
+            <h3>You fell for the Mouse Trap!</h3>
+            <p>Why would you go for the cheese, little mouse?</p>
+        </div>
+        `
+        //The player cannot continue the game after this, forcing them to either return to home or reload the page to play again
+    }
+    cheeseTimer = setTimeout(avoidTrap, 5000) //Sets the anti-cheat timer for 5 seconds. After 5 seconds have passed, activates avoidTrap()
+}
+function avoidTrap(){ //Resets the anti-cheat counter
+    cheeseCounter = 0 //Sets the anti-cheat counter to 0
+}
+function ignoreTrap(){ //Nullifes the effect of the anti-cheat counter
+    cheeseCounter-- //Reduces the anti-cheat counter by 1, nullifying the effect of the mouseTrap function
 }
 timerStart() //Automatically activates the timerStart function to begin the game.
